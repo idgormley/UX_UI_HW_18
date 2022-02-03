@@ -16,70 +16,20 @@
     padding-right: 48px;
 }
 
-a {
-    text-decoration: none;
-}
-
-.navBar>a {
-    padding-left: 48px;
-    width: 25%;
-    min-width: 168px;
-    justify-content: start;
-}
-
-#navigation a {
-    padding-left: 48px;
-    text-decoration: none;
-}
-
-.center, .right {
-    display: flex;
-    align-items: center;
-}
-
-.center {
-    min-width: 216px;
-    justify-content: center;
-    width: 50%;
-}
-
-.right {
-    width: 25%;
-    justify-content: end;
-    padding-right: 48px;
-}
-
-.icons {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 25%;
-    transform: scale(.5);
-}
-
-.icons img {
-    cursor: pointer;
-    padding-left: 48px;
-}
-
 body {
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     background-color: #28253D;
 }
 
-section {
+#about {
     position: relative;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-}
-
-#about {
     min-height: 557px;
     align-content: center;
     justify-content: center;
-
 }
 
 #hero {
@@ -91,7 +41,6 @@ section {
     flex-direction: column;
     align-content: center;
     justify-content: center;
-
 }
 
 #hero h1 {
@@ -134,15 +83,17 @@ button {
     border-radius: 5px;
 }
 
-.title{
+.title {
     text-align: center;
     color: #E62725;
     margin: 24px;
 }
-#viewProjects{
+
+#viewProjects {
     text-align: center;
 }
-.flexContainer{
+
+.flexContainer {
     display: flex;
     flex-direction: row;
     background-color: #1A1630;
@@ -150,7 +101,8 @@ button {
     justify-content: center;
     margin: 0px 5%;
 }
-.flexContainer div{
+
+.flexContainer div {
     width: 33%;
     padding: 24px;
 }
@@ -158,6 +110,8 @@ button {
 .workGrid {
     display: grid;
     justify-content: center;
+    align-content: center;
+    width: 90%;
     gap: 100px 24px;
     margin: 0px 24px;
     grid-template-columns: 3fr 1fr;
@@ -174,9 +128,10 @@ button {
 
 }
 
-h3.project{
-   margin: 0px;
+h3.project {
+    margin: 0px;
 }
+
 .content {
     background-color: #433E66;
     padding: 24px;
@@ -221,6 +176,35 @@ h3.project{
     min-height:242px; */
 }
 
+.center, .right {
+    display: flex;
+    align-items: center;
+}
+
+.center {
+    min-width: 216px;
+    justify-content: center;
+    width: 50%;
+}
+
+.right {
+    width: 25%;
+    justify-content: end;
+    padding-right: 48px;
+}
+
+.icons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 25%;
+    transform: scale(.5);
+}
+
+.icons img {
+    cursor: pointer;
+    padding-left: 48px;
+}
 
 
 /* Text syles */
@@ -257,8 +241,18 @@ h4, a, button {
     color: #F5AE05;
     font-size: 32px;
     line-height: 40px;
+    text-decoration: none;
 }
 
+#navigation a, .navBar>a {
+    padding-left: 48px;
+}
+
+.navBar>a {
+    width: 25%;
+    min-width: 168px;
+    justify-content: start;
+}
 
 
 
@@ -290,12 +284,14 @@ h4, a, button {
 
     }
 
-    #grid {
+    .workGrid {
+        gap: 24px;
         grid-template-rows: 300px 300px 300px 300px 300px 300px;
         grid-template-columns: 1fr;
         grid-template-areas:
             "img1"
             "des1"
+            "."
             "img2"
             "des2"
             "img3"
