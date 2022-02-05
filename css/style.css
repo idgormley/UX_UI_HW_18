@@ -1,24 +1,4 @@
-.navBar {
-    display: flex;
-    flex-direction: row;
-    background-color: #1A1630;
-    align-items: center;
-    margin: -10px;
-    min-width: 320px;
-}
-
-#navigation {
-    display: flex;
-    width: 75%;
-    min-width: 351px;
-    align-items: center;
-    justify-content: end;
-    padding-right: 48px;
-}
-
 body {
-    /* display: flex;
-    flex-direction: column; */
     background-color: #28253D;
 }
 
@@ -95,26 +75,31 @@ button {
 
 .flexContainer {
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
     background-color: #1A1630;
-    align-content: center;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    /* height: 260px; */
     margin: 0px 5%;
+    padding: 24px 0px;
 }
-
+.flexContainer h3{
+    color: #00A7F8;
+}
 .flexContainer div {
-    width: 33%;
-    padding: 24px;
+    flex: 1;
+    text-align: center;
+    /* padding: 24px; */
 }
 
 .workGrid {
     display: grid;
-    justify-content: center;
-    align-content: center;
-    width: 90%;
-    gap: 100px 24px;
+    /* justify-content: center;
+    align-content: center; */
+    gap: 24px 24px;
     margin: 0px 24px;
     grid-template-columns: 3fr 1fr;
+    grid-auto-rows: minmax(50px, auto);
     grid-template-areas:
         "img1 ."
         "img1 des1"
@@ -124,8 +109,7 @@ button {
         "img2 ."
         "img3 ."
         "img3 des3"
-        "img3 ."
-
+        "img3 .";
 }
 
 h3.project {
@@ -138,72 +122,37 @@ h3.project {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 80%;
 }
 
 #img1 {
     grid-area: img1;
-    /* width: 684px;
-    height: 396px; */
+    background: center / contain no-repeat url(/images/diy.png);
+    max-height: 600px;
 }
 
 #des1 {
     grid-area: des1;
-    /* min-width:463px;
-    min-height:314px; */
 }
 
 #img2 {
     grid-area: img2;
-    /* width: 684px;
-    height: 415px; */
+    background: center / contain no-repeat url(/images/dnr.png);
+    height: 600px;
 }
 
 #des2 {
     grid-area: des2;
-    /* min-width:464px;
-    min-height: 314px; */
 }
 
 #img3 {
     grid-area: img3;
-    /* width:689px;
-    height: 391px; */
+    background: center / contain no-repeat url(/images/ah.png);
+    height: 570px;
 }
 
 #des3 {
     grid-area: des3;
-    /* min-width:464px;
-    min-height:242px; */
-}
-
-.center, .right {
-    display: flex;
-    align-items: center;
-}
-
-.center {
-    min-width: 216px;
-    justify-content: center;
-    width: 50%;
-}
-
-.right {
-    width: 25%;
-    justify-content: end;
-    padding-right: 48px;
-}
-
-.icons {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 25%;
-    transform: scale(.5);
-}
-
-.icons img {
-    cursor: pointer;
-    padding-left: 48px;
 }
 
 
@@ -225,7 +174,7 @@ h1 {
     line-height: 96px;
 }
 
-h3, .navBar>a {
+h3, .left {
     font-family: Teko;
     font-style: normal;
     font-weight: normal;
@@ -244,29 +193,105 @@ h4, a, button {
     text-decoration: none;
 }
 
-#navigation a, .navBar>a {
+/* nav bar */
+
+.navBar {
+    display: flex;
+    flex-flow: row wrap;
+    background-color: #1A1630;
+    align-items: center;
+    margin: -8px;
+    /* padding: 0px 24px; */
+    justify-content: space-between;
+    min-height: 88px;
+}
+
+.left {
+    flex: 1;
+    min-width: 112px;
+}
+
+#navigation {
+    display: flex;
+    flex: 3;
+    min-width: 351px;
+    align-items: center;
+    justify-content: end;
+    padding-right: 48px;
+}
+
+#navigation a, .left {
     padding-left: 48px;
 }
 
-.navBar>a {
-    width: 25%;
-    min-width: 168px;
-    justify-content: start;
+.center {
+    min-width: 131px;
+    justify-content: center;
+    flex: 2;
 }
 
+.right {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+}
 
+.icons {
+    transform: scale(.75);
+}
 
+.icons img {
+    cursor: pointer;
+    padding-left: 48px;
+}
 
+img {
+    object-fit: contain;
+}
+
+/* mobile */
 
 @media only screen and (max-width: 600px) {
+    #navigation {
+        display: none;
+    }
+
     h1 {
         font-size: 40px;
         line-height: 56px;
     }
 
-    h3, .navBar>a {
+    h3, .left {
         font-size: 32px;
         line-height: 40px;
+    }
+
+    nav .left {
+        width: 100%;
+        padding-left: 0px;
+        text-align: center;
+    }
+
+    footer .left {
+        padding-left: 24px;
+
+    }
+
+    .center {
+        flex: 1;
+        padding: 0px 24px;
+    }
+
+    .right {
+        padding-right: 24px;
+    }
+
+    .icons {
+        transform: scale(.5);
+    }
+
+    .icons img {
+        padding-left: 24px;
     }
 
     H4, a {
@@ -281,12 +306,11 @@ h4, a, button {
 
     #hero {
         width: 100%;
-
     }
 
     .workGrid {
         gap: 24px;
-        grid-template-rows: 300px 300px 300px 300px 300px 300px;
+        grid-template-rows: 300px 300px 24px 300px 300px 24px 300px 300px;
         grid-template-columns: 1fr;
         grid-template-areas:
             "img1"
@@ -294,6 +318,7 @@ h4, a, button {
             "."
             "img2"
             "des2"
+            "."
             "img3"
             "des3";
     }
